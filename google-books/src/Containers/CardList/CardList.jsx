@@ -3,6 +3,7 @@ import { fetchBooks } from "../../Data/js/main";
 import Card from "../../Components/Card/Card";
 import styles from "./CardList.module.scss";
 import loadingGif from "../../img/loading.gif";
+import noCover from "../../img/no-book-cover.jpeg";
 
 const CardList = ({ searchTerm }) => {
   const [books, setBooks] = useState([]);
@@ -30,16 +31,13 @@ const CardList = ({ searchTerm }) => {
     <section>
       <div className={styles.container}>
         {loading && <img src={loadingGif} alt="Loading" />}
+        {!loading && books.length === 0 && <p>No results found.</p>}
       </div>
       <div className={styles.container}>
         {books.map((book) => (
           <Card
             key={book.id}
-            image={
-              book.imageLinks
-                ? book.imageLinks.thumbnail
-                : "defaultThumbnailURL"
-            }
+            image={book.imageLinks ? book.imageLinks.thumbnail : noCover}
             title={book.title}
             authors={
               book.authors && book.authors.length > 1
