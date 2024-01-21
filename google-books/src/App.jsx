@@ -12,6 +12,7 @@ import {
 } from "./Data/js/data";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar";
+import Module from "./Components/Modal/Modal";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");

@@ -8,6 +8,7 @@ import noCover from "../../img/no-book-cover.jpeg";
 const CardList = ({ searchTerm }) => {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [module, setModule] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -36,6 +37,7 @@ const CardList = ({ searchTerm }) => {
       <div className={styles.container}>
         {books.map((book) => (
           <Card
+            setModule={setModule}
             key={book.id}
             image={book.imageLinks ? book.imageLinks.thumbnail : noCover}
             title={book.title}
@@ -44,11 +46,11 @@ const CardList = ({ searchTerm }) => {
                 ? book.authors.join(", ")
                 : book.authors
             }
-            description={
-              book.description && book.description.length > 130
-                ? book.description.substring(0, 130) + "..."
-                : book.description
-            }
+            description={book.description}
+            averageRating={averageRating}
+            categories={categories}
+            language={language}
+            publishedDate={publishedDate}
           />
         ))}
       </div>

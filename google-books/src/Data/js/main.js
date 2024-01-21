@@ -4,7 +4,7 @@ export const fetchBooks = async (searchTerm) => {
 
   try {
     const response = await fetch(
-      `https://www.googleapis.com/books/v1/volumes?q="${searchTerm}"&maxResults=40`
+      `https://www.googleapis.com/books/v1/volumes?q="${searchTerm}"&key=${key}&maxResults=40`
     );
 
     if (!response.ok) {
@@ -12,16 +12,30 @@ export const fetchBooks = async (searchTerm) => {
     }
 
     const fetchedData = await response.json();
-    // console.log(fetchedData);
+    console.log(fetchedData);
 
     const cleanedData = fetchedData.items.map((book) => {
-      const { title, authors, description, imageLinks, id } = book.volumeInfo;
+      const {
+        title,
+        authors,
+        description,
+        imageLinks,
+        id,
+        averageRating,
+        categories,
+        language,
+        publishedDate,
+      } = book.volumeInfo;
       return {
         title,
         authors,
         description,
         imageLinks,
         id,
+        averageRating,
+        categories,
+        language,
+        publishedDate,
       };
     });
 

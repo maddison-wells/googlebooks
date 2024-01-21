@@ -16,7 +16,7 @@ const TopSelling = ({ data, linkClicked }) => {
 
         const fetchPromises = data[1].map(async (title) => {
           const results = await fetchBooks(title);
-          return results[0] || [];
+          return results[0];
         });
 
         const booksData = await Promise.all(fetchPromises);
