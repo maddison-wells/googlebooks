@@ -1,4 +1,5 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./App.scss";
 import Header from "./Containers/Header/Header";
@@ -10,13 +11,17 @@ import {
   topChildrensBooks,
   topGraphicNovels,
 } from "./Data/js/data";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar";
 import Module from "./Components/Modal/Modal";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [linkClicked, setLinkClicked] = useState(false);
+
+  useEffect(() => {
+    document.title = "Ink Inquiry";
+  }, []);
+
   return (
     <>
       <BrowserRouter>
