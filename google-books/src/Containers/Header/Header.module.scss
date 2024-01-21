@@ -17,3 +17,17 @@
     padding-top: 0px;
   }
 }
+
+@media (max-width: 1006px) {
+  .header {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 610px) {
+  .header {
+    &__text {
+      display: none;
+    }
+  }
+}

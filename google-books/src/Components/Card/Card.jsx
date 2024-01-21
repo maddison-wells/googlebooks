@@ -5,10 +5,10 @@ import styles from "./Card.module.scss";
 
 const Card = ({
   title = "Unknown",
-  authors = "Unknown",
+  authors = "Unknown author",
   description = "Not available",
   image,
-  averageRating,
+  averageRating = "No rating",
   categories,
   language,
   publishedDate,

@@ -4,6 +4,7 @@ import Card from "../Card/Card";
 import noCover from "../../img/no-book-cover.jpeg";
 import styles from "./TopSelling.module.scss";
 import loadingGif from "../../img/loading.gif";
+import { languageCodeToName } from "../../Data/js/data";
 
 const TopSelling = ({ data, linkClicked }) => {
   const [topBooks, setTopBooks] = useState([]);
@@ -50,11 +51,11 @@ const TopSelling = ({ data, linkClicked }) => {
                 ? book.authors.join(", ")
                 : book.authors
             }
-            description={
-              book.description && book.description.length > 130
-                ? book.description.substring(0, 130) + "..."
-                : book.description
-            }
+            description={book.description}
+            averageRating={book.averageRating}
+            categories={book.categories}
+            language={languageCodeToName(book.language)}
+            publishedDate={book.publishedDate}
           />
         ))}
     </div>

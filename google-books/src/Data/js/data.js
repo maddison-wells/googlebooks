@@ -27,7 +27,7 @@ export const bestSellingBooks = [
 export const topFantasyBooks = [
   "Top Fantasy Books",
   [
-    "The Lord of the Rings by J.R.R. Tolkien",
+    "aWZzLPhY4o0C",
     "A Game of Thrones 4 book bundle",
     "Harry Potter and the Philosopher's Stone - 25th Anniversary Edition by J.K. Rowling",
     "The Hobbit by J.R.R. Tolkien",
@@ -98,3 +98,31 @@ export const topGraphicNovels = [
     "Bone by Jeff Smith",
   ],
 ];
+
+export const languageCodeToName = (code) => {
+  const languageMap = {
+    en: "English",
+    es: "Spanish",
+    fr: "French",
+    de: "German",
+    it: "Italian",
+    zh: "Chinese",
+    ja: "Japanese",
+    ko: "Korean",
+    ru: "Russian",
+    ar: "Arabic",
+    pt: "Portuguese",
+    hi: "Hindi",
+    tr: "Turkish",
+    nl: "Dutch",
+    sv: "Swedish",
+    pl: "Polish",
+    vi: "Vietnamese",
+    th: "Thai",
+    id: "Indonesian",
+    he: "Hebrew",
+    el: "Greek",
+  };
+
+  return languageMap[code] || "Unknown";
+};

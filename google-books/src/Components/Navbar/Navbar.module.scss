@@ -2,6 +2,8 @@
   display: flex;
   justify-content: space-around;
   color: #4c3b4d;
+  flex-wrap: wrap;
+  gap: 40px;
 
   &__link {
     text-decoration: none;
