@@ -1,3 +1,3 @@
-##Google Books API search engine
+Google Books API search engine
 
-Build in React, using JavaScript and SCSS
+Built in React, using JavaScript and SCSS
