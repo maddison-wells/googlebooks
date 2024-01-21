@@ -6,7 +6,7 @@ const Modal = ({
   closeModal,
   title = "Unknown",
   authors = "Unknown author",
-  // description = "Not available",
+  description = "Not available",
   image,
   averageRating = "No rating",
   categories,
@@ -52,15 +52,15 @@ const Modal = ({
           crossOrigin="anonymous"
         ></script>
       </Helmet>
-      <head className={styles.card__head}></head>
       <article ref={modalRef} className={styles.card}>
         <div className={styles.card__container}>
-          <img className={styles.card__img} src={image} alt="book image" />
+          {/* <img className={styles.card__img} src={image} alt="book image" /> */}
           <p>
             <span className={styles.card__stars}>
               {generateStars(averageRating)}
             </span>
           </p>
+
           <h1 className={styles.card__heading}>{title}</h1>
           <h4 className={styles.card__subheading}>{authors}</h4>
           <p>
@@ -69,8 +69,9 @@ const Modal = ({
           <p>
             Categories: <span className={styles.card__span}>{categories}</span>
           </p>
-          {/* <p className={styles.card__description}>{description}</p> */}
         </div>
+        <p className={styles.card__description}>{description}</p>
+
         <div className={styles.card__container}>
           <button onClick={closeModal} className={styles.card__button}>
             Close

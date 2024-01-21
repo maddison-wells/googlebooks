@@ -5,9 +5,8 @@
   margin-top: 15px;
   padding: 20px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
+
+  flex-direction: column;
   border: 4px solid #4c3b4d;
   position: fixed;
   top: 50%;
@@ -26,7 +25,6 @@
     display: flex;
     flex-direction: column;
     margin-left: 25px;
-    align-content: center;
   }
 
   &__img {
@@ -35,6 +33,8 @@
 
   &__description {
     margin-top: 20px;
+    margin-left: 20px;
+    text-align: justify;
   }
 
   &__subheading {

@@ -4,7 +4,7 @@ export const fetchBooks = async (searchTerm) => {
 
   try {
     const response = await fetch(
-      `https://www.googleapis.com/books/v1/volumes?q="${searchTerm}"&key=${key}&maxResults=40`
+      `https://www.googleapis.com/books/v1/volumes?q="${searchTerm}"&maxResults=40`
     );
 
     if (!response.ok) {
