@@ -1,10 +1,10 @@
-export const fetchBooks = async (searchTerm) => {
+export const fetchBooks = async (searchTerm, limit = 40) => {
   const key = "AIzaSyAOxvj0vhDEKy_sgNqNyijutb9RbuwFeDc";
   // console.log(searchTerm);
 
   try {
     const response = await fetch(
-      `https://www.googleapis.com/books/v1/volumes?q="${searchTerm}"&maxResults=40`
+      `https://www.googleapis.com/books/v1/volumes?q="${searchTerm}"&maxResults=${limit}`
     );
 
     if (!response.ok) {
@@ -20,22 +20,26 @@ export const fetchBooks = async (searchTerm) => {
         authors,
         description,
         imageLinks,
-        id,
+        idpublishedDate,
         averageRating,
         categories,
         language,
         publishedDate,
       } = book.volumeInfo;
+
+      const { id } = book.accessInfo;
+
       return {
         title,
         authors,
         description,
         imageLinks,
-        id,
+        publishedDate,
         averageRating,
         categories,
         language,
         publishedDate,
+        id,
       };
     });
 

@@ -43,9 +43,9 @@ const CardList = ({ searchTerm }) => {
         {loading && <img src={loadingGif} alt="Loading" />}
       </div>
       <div className={styles.container}>
-        {books.map((book) => (
+        {books.map((book, index) => (
           <Card
-            key={book.id}
+            key={book.id || index}
             image={book.imageLinks ? book.imageLinks.thumbnail : noCover}
             title={book.title}
             authors={

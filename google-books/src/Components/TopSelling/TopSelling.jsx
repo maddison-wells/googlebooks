@@ -15,8 +15,9 @@ const TopSelling = ({ data, linkClicked }) => {
       try {
         setLoading(true);
 
-        const fetchPromises = data[1].map(async (title) => {
-          const results = await fetchBooks(title);
+        const fetchPromises = data[1].map(async (title, index) => {
+          await new Promise((resolve) => setTimeout(resolve, index * 500));
+          const results = await fetchBooks(title, 1);
           return results[0];
         });
 
@@ -43,7 +44,7 @@ const TopSelling = ({ data, linkClicked }) => {
       {topBooks.length > 0 &&
         topBooks.map((book) => (
           <Card
-            key={book.id}
+            key={book.publishedDate}
             image={book.imageLinks ? book.imageLinks.thumbnail : noCover}
             title={book.title}
             authors={
