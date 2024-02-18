@@ -10,6 +10,7 @@ The Google Book API Search Engine is a web application that allows users to sear
 
 - Search for books using the Google Books API.
 - View details of each book, including the title, authors, description, and more.
+- Top selling lists for various categories
 
 ## Getting Started
 
